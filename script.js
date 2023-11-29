@@ -1,112 +1,146 @@
 //Question 1
 function grandGrandparent() {
-    // console.log('grandGrandParent');
-    grandParent();
+  // console.log('grandGrandParent');
+  grandParent();
 }
 function grandParent() {
-    // console.log('grandParent');
-    parent();
+  // console.log('grandParent');
+  parent();
 }
 function parent() {
-    // console.log('parent');
-    child();
+  // console.log('parent');
+  child();
 }
 function child() {
-    // console.log('child');
-    innerchild();    
+  // console.log('child');
+  innerchild();
 }
 function innerchild() {
-    // console.log('innerChild');
-    console.trace();//trace the whole stack
+  // console.log('innerChild');
+  console.trace(); //trace the whole stack
 }
 grandGrandparent();
 //Question 2
-let a=1;
-let b=new Number(1);
-console.log(a==b);
-console.log(a===b);
+let a = 1;
+let b = new Number(1);
+console.log(a == b);
+console.log(a === b);
 //Question 3
-let age='51';
-let validAge='51'
+let age = '51';
+let validAge = '51';
 
-age=age+1;
-validAge++;//converts the string into number
+age = age + 1;
+validAge++; //converts the string into number
 console.log(age);
 console.log(validAge);
 
 //Question 4 :to merge two array in two ways
-const arr=[2,23,55,23];
-const brr=[23,355,423];
+const arr = [2, 23, 55, 23];
+const brr = [23, 355, 423];
 
 // const marrgedArray=arr.concat(brr);
-const marrgedArray=[...arr,...brr];
+const marrgedArray = [...arr, ...brr];
 
 console.log(marrgedArray);
-//Question 5 :to merge two array in two ways
-const num1=1000000;
-const num2=10_00_000;//numeric separator introduced in ES6
-console.log(num1===num2);
-//Question 6 :to merge two array in two ways
-console.log(+true);
-console.log(!'kamala');
-//Question 7 :to find element in n array
-const arr1=[23,44,1,39];
-console.log( 1 in arr1);
+//Question 5 :to saparate 0's of a number with separator
+const num1 = 1000000;
+const num2 = 10_00_000; //numeric separator introduced in ES6
+console.log(num1 === num2);
+console.log('=====================');
+//Question 6 :+ operartor
+console.log(+true); //converts true into numeric value
+console.log(!'false');
+console.log('=====================');
+//Question 7 :to find element in an array
+const arr1 = [23, 44, 1, 39];
+console.log(1 in arr1);
 console.log(2 in arr1);
-//in js index are treated as key so the  in oparator raturns true as 2 is in the index array of 
-//keys and 44 is not prasent in the indes array so it wiil return false
+//in js index are treated as key so the  'in' oparator raturns true as 2 is in the index array of
+//keys and 44 is not prasent in the index array so it wiil return false
 console.log(44 in arr1);
 //Question 7 :to check if anyone is failed
-const marks=[
-    {id:22,marks:45},
-    {id:12,marks:86},
-    {id:29,marks:25},
-    {id:22,marks:35},
-]
-const PASSING_MARKS=33;
-const isFailed=marks.some((element)=> element.marks< PASSING_MARKS)
+const marks = [
+  { id: 22, marks: 45 },
+  { id: 12, marks: 86 },
+  { id: 29, marks: 25 },
+  { id: 22, marks: 15 },
+];
+const PASSING_MARKS = 33;
+const isFailed = marks.some((element) => element.marks < PASSING_MARKS);
 console.log(isFailed);
+console.log('=====================');
 //Question 8 :to add certain element in an index
-let arry=['somya','ranu','khwaja'];
-//add rahi in arry 
+let arry = ['somya', 'ranu', 'khwaja'];
+//add rahi in arry
 //method 1
 arry.unshift('rahi');
 console.log(arry);
 //method 2
-arry.splice(1,1,'rahi')
+arry.splice(1, 1, 'rahi');
 console.log(arry);
 //method 3
-arry=['rahi',...arry];
+arry = ['rahi', ...arry];
 console.log(arry);
+console.log('=====================');
 //Question 9 :to invoke a function without its name i.e function() not allowed
 function show() {
-    console.log('WOW');
+  console.log('WOW');
 }
 
-const functionName='show';
-console.log(window.show);
+const functionName = 'show'; //storing function name in a variable
+console.log(window.show); //accessing function body  through window object
+window[functionName](); //invoking it using dynemic prperty access
+console.log('=====================');
 
 //Question 10 :to stop set interval function
-let flg=0;
+let flg = 0;
 
-const id=setInterval(() => {
-    console.log('inside interval');
-    // flg++;
-    console.log(++flg);
-    if (flg>3) {
-        clearInterval(id);//function defined in window object which rechived id  which interrupts the setIinterval
-    }
-
+const id = setInterval(() => {
+  console.log('inside interval');
+  // flg++;
+  console.log(++flg);
+  if (flg > 3) {
+    clearInterval(id); //function defined in window object which rechived id  which interrupts the setIinterval
+  }
 }, 1000);
+console.log('=====================');
 
+//Question 11 :to invoke 'iffy' with !
+!(function () {
+  console.log('I am amazed 😎');
+})();
+console.log('=====================');
+//Question 12 :to get last element of an array
 
+const arro = ['r', 'u', 'b', 'y'];
+console.log(arro.at(-1));
+console.log('=====================');
+//Question 12 :to log numbers defined by number function
+const number1 =  Number();
+const number2 =  Number(undefined);
+console.log(`num1= ${number1}`);
+console.log(`num2= ${number2}`);
+console.log('=====================');
+//Question 13 :to show switch statemet uses '==' or '==='
+const swv = "45";
+switch (swv) {
+    case 45:
+        console.log('==');
+        break;
+        case "45":
+            console.log('===');
+            break;
+            default:
+                console.log(':');
+                break;
+            }
+            
+//Question 14 :to passing arguent mandatory
+function checkErr() {
+    throw new Error('kuch dala re udhar');
+}
+function showTheMassage(name= checkErr()) {
+    console.log(name);
+}
 
-
-
-
-
-
-
-
-
-
+showTheMassage();
