@@ -143,4 +143,49 @@ function showTheMassage(name= checkErr()) {
     console.log(name);
 }
 
-showTheMassage();
+showTheMassage("karua tel");
+// Question 15: to chesk between try and finally 
+function test(){
+  try {
+  return 1
+} finally {
+  console.log('from finally');
+  return 2
+}
+}
+console.log(test());
+//Question 16: 'Object.is' vs == and ===
+console.log(-0 == 0);
+console.log(-0 === 0);
+Object.is(0,-0);// compares 0 ans NaN
+//Question 17: defineProperty() and enumerable
+const obj={};
+Object.defineProperty(obj,"lang",{value:'js',enumerable:true})// keys are non enumerable in definePropert() i.e they are not available
+// in loopoin operatin like object.keys,for in loop if not enumerable set to true in keys
+console.log(obj);
+console.log(obj.lang);
+//Questin 18:this vs eturn
+function superHero() {
+  this.hero='hawk eye';
+  return {hero:"Dr. Strange"}
+}
+const hero=new superHero()
+console.log(hero);
+//Question 19: make array length 0
+const arry1=[12,33,5,70];
+console.log(arry1);
+//way 1
+arry1.length=0;
+console.log(arry1);
+//way 2
+arry1.splice(0,arry1.length);
+console.log(arry1);
+//Question 20:
+console.log('======');
+console.log(false==[]);
+console.log(false==![]);//![]=FALSE in js,== makes [] to number
+console.log('======');
+//Question 21:Number.MAX_SAFE_INTEGER
+console.log(88888888888888888);
+console.log('MAX_SAFE_INTEGER');
+console.log(Number.MAX_SAFE_INTEGER);
